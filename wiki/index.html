@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurastra Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet">
+  <style>
+    .banner-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-page img {
+      width: 80%;
+      height: auto;
+    }
+    </style>
+</head>
+
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="#" aria-label="Verdant Empire Wiki home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="../assets/icons/topiconnew.png" alt="" height="40">
+        </span>
+      </a>
+      <div class="topbar__divider" aria-hidden="true"></div>
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <a href="#">Página Principal</a>
+        <a href="/wiki/Todas_As_Páginas/">Todas as Páginas</a>
+        <a href="#" data-random-page>Página Aleatória</a>
+      </nav>
+      <form class="hero-search" id="searchForm" role="search" autocomplete="off">
+        <div class="hero-search__field">
+          <svg class="hero-search__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input type="search" id="searchInput" class="hero-search__input" placeholder="Pesquisar"
+            aria-label="Pesquisar páginas da wiki"
+            aria-expanded="false" aria-controls="searchPreview" role="combobox" aria-autocomplete="list" />
+        </div>
+        <ul class="search-preview" id="searchPreview" role="listbox" aria-label="Resultados da pesquisa" hidden></ul>
+      </form>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost" id="randomBtn" type="button">🌙</button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-label="Verdant Empire">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Boas-vindas à</p>
+        <main class="banner-page"><img src="../assets/images/wiki.png"></main>
+        <p class="hero__sub">
+          A Wiki do Servidor de Minecraft Aurastra
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+    <!-- ============ BARRA DE STATUS ============ -->
+    <section class="stats" aria-label="Wiki statistics">
+      <div class="stats__inner">
+        <div class="stat"><span class="stat__num" data-count="11">0</span><span class="stat__label">Páginas</span></div>
+        <div class="stat"><span class="stat__num" data-count="0">0</span><span class="stat__label">Edições</span></div>
+        <!-- <div class="stat"><span class="stat__num" data-count="0">0</span><span class="stat__label">Editores</span></div> -->
+      </div>
+    </section>
+
+    <div class="container layout">
+      <div class="layout__main">
+
+        <!-- =========== ARTIGO EM DESTAQUE ============ -->
+
+        <!-- placeholder, remover quando tiver mais paginas 
+
+
+        <section class="featured" id="featured" aria-label="Featured character">
+          <div class="section-head">
+            <h2 class="section-title">Artigo em Destaque</h2>
+          </div>
+          <hr style="width:80%;text-align:left;margin-left:0">
+          <br>
+
+          <article class="hl-card" id="hlCard" aria-live="polite">
+            <div class="hl-card__art">
+              <img id="hlImg" src="../assets/images/temp_featured.png" alt="Seraphine Vale" width="520" height="640">
+            </div>
+            <div class="hl-card__body">
+
+              <h3 class="hl-card__name" id="hlName">O Corvo</h3>
+              <p class="hl-card__role" id="hlRole">The Ashbound Heir · Wielder of the Glass Crown</p>
+              <p class="hl-card__desc" id="hlDesc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua
+              </p>
+              <div class="hl-card__meta" id="hlMeta">
+                <span><strong>Allegiance</strong> The Thornwood Pact</span>
+                <span><strong>First seen</strong> Vol. I — Ashes of Vale</span>
+                <span><strong>Status</strong> Alive (Reign of Glass)</span>
+              </div>
+              <div class="hl-card__actions">
+                <a class="btn btn--primary" href="#" onclick="return false;">Ler artigo inteiro</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="featured__dots" id="rotDots" role="tablist" aria-label="Featured selector"></div>
+        </section>
+        
+        -->
+
+        <!-- ============ categorias principais ============ -->
+
+        <!-- placeholder, remover quando tiver mais paginas 
+        <section class="lore" id="characters" aria-label="Explore the lore">
+          <div class="section-head">
+            <h2 class="section-title">Categorias Principais</h2>
+            <a class="section-link" href="Todas_As_Páginas/index.html">Todas as páginas →</a>
+
+          </div>
+          <hr style="width:80%;text-align:left;margin-left:0">
+          <br>
+          <div class="lore__grid">
+            <a class="lore-card" href="#characters" data-glow="rose" id="factions">
+              <div class="lore-card__thumb"><img src="https://picsum.photos/seed/aurastra-characters/640/260" alt=""
+                  loading="lazy"></div>
+              <div class="lore-card__body">
+                <h3 class="lore-card__title">Nações</h3>
+                <p class="lore-card__desc">texto placeholder</p>
+                <span class="lore-card__count">XX páginas</span>
+              </div>
+            </a>
+            <a class="lore-card" href="#characters" data-glow="cyan">
+              <div class="lore-card__thumb"><img src="https://picsum.photos/seed/aurastra-factions/640/260" alt=""
+                  loading="lazy"></div>
+              <div class="lore-card__body">
+                <h3 class="lore-card__title">Selos</h3>
+                <p class="lore-card__desc">texto placeholder</p>
+                <span class="lore-card__count">XX pages</span>
+              </div>
+            </a>
+            <a class="lore-card" href="#characters" data-glow="amber" id="locations">
+              <div class="lore-card__thumb"><img src="https://picsum.photos/seed/aurastra-locations/640/260" alt=""
+                  loading="lazy"></div>
+              <div class="lore-card__body">
+                <h3 class="lore-card__title">Conquistas</h3>
+                <p class="lore-card__desc">texto placeholder</p>
+                <span class="lore-card__count">XX páginas</span>
+              </div>
+            </a>
+            <a class="lore-card" href="#characters" data-glow="violet">
+              <div class="lore-card__thumb"><img src="https://picsum.photos/seed/aurastra-items/640/260" alt=""
+                  loading="lazy"></div>
+              <div class="lore-card__body">
+                <h3 class="lore-card__title">Relíquias</h3>
+                <p class="lore-card__desc">texto placeholder</p>
+                <span class="lore-card__count">XX páginas</span>
+              </div>
+            </a>
+
+          </div>
+        -->
+        </section>
+
+        <section class="featured" id="featured" aria-label="Featured character">
+          <div class="section-head">
+            <h2 class="section-title">Sobre a Autrastra Wiki</h2>
+            <div class="featured__nav">
+            </div>
+          </div>
+          <hr style="width:80%;text-align:left;margin-left:0">
+          <p>A Aurastra Wiki é um projeto de enciclopédia colaborativa baseado no modelo wiki.
+            Seu propósito é documentar e explicar a hisória de Aurastra, um universo ambientado no jogo Minecraft.
+            Por ainda estar em fase inicial, o conteúdo da wiki pode sofrer diversas alterações ao longo do tempo.</p>
+        </section>
+      </div>
+
+
+
+      <!-- ============ BARRA DO LADO ============ -->
+      <aside class="layout__rail" aria-label="Wiki activity">
+        <section class="panel" id="trending">
+          <h2 class="panel__title"><span class="panel__icon">▲</span>Artigos Principais</h2>
+          <ol class="trend-list">
+            <li><a href="Criação/"><span class="trend-list__rank">1</span><span class="trend-list__name">Criação</span></a></li>
+            <li><a href="Catástrofe_De_Pólis/"><span class="trend-list__rank">2</span><span
+                  class="trend-list__name">Catástrofe De Pólis</span></a></li>
+            <li><a href="Aurora_Bay/"><span class="trend-list__rank">3</span><span class="trend-list__name">Aurora Bay</span></a>
+            </li>
+            <li><a href="Nação_De_Lésbos"><span class="trend-list__rank">4</span><span class="trend-list__name">Nação De Lésbos</span></a>
+            </li>
+            <li><a href="Vale_Bear/"><span class="trend-list__rank">5</span><span class="trend-list__name">Vale Bear</span></a></li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+
+
+
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>@ 2026 Base Central Trambiqueira (BCT) | feito com carinho por <a href="https://ashleytarifa.github.io/"
+          target="_blank">@ashleytarifa</a></p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="https://discord.gg/Tp44KXT7Qw" target="_blank">Servidor do Discord</a>
+        <a href="https://www.tiktok.com/@aurastrabct" target="_blank">TikTok Official</a>
+        <a href="https://x.com/ServerBaseCT" target="_blank">X/Twitter Oficial</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="nav-scrim" id="navScrim" hidden></div>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

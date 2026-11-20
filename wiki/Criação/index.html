@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Criação — Aurastra Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .article--wiki {
+            max-width: 1180px;
+            padding-bottom: 0;
+        }
+
+        .wiki-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 18px 0 24px;
+            color: var(--ink-2);
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .wiki-note svg {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            color: var(--muted);
+        }
+
+        .wiki-update {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 16px 24px;
+            background: var(--bg2);
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .wiki-update svg {
+            width: 20px;
+            height: 20px;
+            flex: none;
+        }
+
+        .article__layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .wiki-infobox {
+            overflow: hidden;
+            border: 1px solid var(--line-2);
+            border-radius: var(--r-md);
+            background: var(--panel);
+        }
+
+        .wiki-infobox h2 {
+            margin: 0;
+            padding: 10px 14px;
+            color: var(--ink);
+            background: var(--panel-2);
+            font-family: var(--display);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .wiki-infobox figure {
+            margin: 0;
+            padding: 12px;
+        }
+
+        .wiki-infobox img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: var(--r-sm);
+        }
+
+        .wiki-infobox figcaption {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .wiki-infobox table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .wiki-infobox th,
+        .wiki-infobox td {
+            padding: 8px 12px;
+            border-top: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .wiki-infobox th {
+            width: 40%;
+            color: var(--ink);
+        }
+
+        .wiki-color {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wiki-color__swatch {
+            width: 16px;
+            height: 16px;
+            flex: none;
+            border: 1px solid var(--line-2);
+            background: #ffffff;
+        }
+
+        .wiki-infobox .wiki-seal {
+            width: 40px;
+            height: 40px;
+            max-height: none;
+            object-fit: contain;
+            image-rendering: pixelated;
+            border-radius: 0;
+        }
+
+        .wiki-gallery {
+            margin-top: 40px;
+        }
+
+        .wiki-gallery h2 {
+            margin-top: 0;
+        }
+
+        .wiki-gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+            gap: 16px;
+        }
+
+        .wiki-gallery__item {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid var(--line-2);
+            border-radius: var(--r-md);
+            background: var(--panel);
+        }
+
+        .wiki-gallery__item img {
+            display: block;
+            width: 100%;
+            height: 210px;
+            padding: 10px;
+            object-fit: contain;
+            background: var(--panel-2);
+        }
+
+        .wiki-gallery__item img:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        .wiki-gallery__item figcaption {
+            margin: 0;
+            padding: 12px 14px;
+            color: var(--ink-2);
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        @media (max-width: 560px) {
+            .article__layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .wiki-update {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="primaryNav">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="brand" href="../index.html" aria-label="Verdant Empire Wiki home">
+                <span class="brand__mark" aria-hidden="true">
+                    <img src="../../assets/icons/topiconnew.png" alt="" height="40">
+                </span>
+            </a>
+            <div class="topbar__divider" aria-hidden="true"></div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <a href="../index.html">Página Principal</a>
+                <a href="/wiki/Todas_As_Páginas/">Todas as Páginas</a>
+                <a href="#" data-random-page>Página Aleatória</a>
+            </nav>
+            <form class="hero-search" id="searchForm" role="search" autocomplete="off">
+                <div class="hero-search__field">
+                    <svg class="hero-search__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input type="search" id="searchInput" class="hero-search__input" placeholder="Pesquisar"
+                        aria-label="Pesquisar páginas da wiki" aria-expanded="false" aria-controls="searchPreview"
+                        role="combobox" aria-autocomplete="list" />
+                </div>
+                <ul class="search-preview" id="searchPreview" role="listbox" aria-label="Resultados da pesquisa" hidden>
+                </ul>
+            </form>
+            <div class="topbar__actions">
+                <button class="btn btn--ghost" id="randomBtn" type="button">🌙</button>
+
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <article class="container article article--wiki">
+            <p class="article__crumb"><a href="/">Início</a> › Wiki</p>
+            <h1 class="article__title">Criação</h1>
+
+            <div class="article__layout article__layout--wiki-toc-infobox">
+                <div class="article__body">
+                    <p>No início não havia nada além d'O Grande Silêncio, o vazio primordial que ocupa todo o espaço do
+                        universo, mas, da pura vontade do universo de existir, um véu surgiu; ele pulsava com intenção,
+                        sua vida era nutrida pelo próprio ato da inexistência.<br>Com o tempo, o véu se rompeu — dando
+                        vida á uma criança de feições gentis e rosadas. A criança pulou e festejou em seu novo parque de
+                        diversão, cada gargalhada uma nova explosão de átomos e estrelas diante de seus olhos... Mas
+                        conforme eras se passaram, O Pequeno Criador se sentiu cada vez mais sozinho, e assim como ele
+                        surgiu, outro ser foi criado.<br>Ele aparentava ter sua idade e estava claramente confuso.
+                        "Qual o seu nome garoto?" o Criador inquiriu "O meu é Irigo!"
+                        "Irigo..." o garoto respondeu, ainda admirado pela miríade de astros e planetas que se
+                        movimentavam aleatoriamente, sem lógica ou explicação.<br>"Haha! esse é o meu nome, seu bobo!"
+                        Irigo estendeu a mão para o garoto, o levantando do chão, mas ao tentar dar seus primeiros
+                        passos a criança caiu em meio uma supernova, levando o Criador junto. Em meio a gargalhadas, os
+                        planetas que antes eram hostis para a vida começaram a habitar a fauna e a flora, e então eles
+                        entenderam o poder que possuíam. Mas, nem tudo era compreensível para os Pequenos Criadores, e
+                        buscando entender mais sobre tudo aquilo, outros surgiram.<br>Para estabilizar o fluido que tudo
+                        ditava, o Tempo surgiu e se nomeu Boreas.<br>Para discernir, a Sabedoria se formou com
+                        Cernos.<br>E o Grande Silêncio, cansado de tanta comoção, cedeu o Espaço de Sylenos.<br>Tudo
+                        surgia da própria vontade da Criação e a chamavam de Irigo.<br>A Vida era criada com um piscar
+                        de olhos e foi nomeada Tandem.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <div class="wiki-update" role="note" aria-label="Informações de atualização da página">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3.5 12a8.5 8.5 0 1 1 2.49 6.01L3.5 15.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.5 20v-4.5H8M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span>Essa página não foi editada até o momento, a última atualização foi em 17 de Novembro de 2026, às
+                12h25</span>
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>@ 2026 Base Central Trambiqueira (BCT) | feito com carinho por <a href="https://ashleytarifa.github.io/"
+                    target="_blank">@ashleytarifa</a></p>
+            <nav class="footer__links" aria-label="Footer">
+                <a href="https://discord.gg/Tp44KXT7Qw" target="_blank">Servidor do Discord</a>
+                <a href="https://www.tiktok.com/@aurastrabct" target="_blank">TikTok Official</a>
+                <a href="https://x.com/ServerBaseCT" target="_blank">X/Twitter Oficial</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="nav-scrim" id="navScrim" hidden></div>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

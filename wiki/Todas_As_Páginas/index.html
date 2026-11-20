@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todas As Páginas — Aurastra Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .article--wiki {
+            max-width: 1180px;
+            padding-bottom: 0;
+        }
+
+        .wiki-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 18px 0 24px;
+            color: var(--ink-2);
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .wiki-note svg {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            color: var(--muted);
+        }
+
+        .wiki-update {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 16px 24px;
+            background: var(--bg2);
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .wiki-update svg {
+            width: 20px;
+            height: 20px;
+            flex: none;
+        }
+
+        .article__layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .article--wiki .article__layout--wiki-toc-infobox[data-no-toc] {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .article--wiki .article__layout--wiki-toc-infobox[data-no-toc]>.article__body {
+            grid-column: 1;
+        }
+
+        @media (max-width: 560px) {
+            .article__layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .wiki-update {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="primaryNav">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="brand" href="../index.html" aria-label="Verdant Empire Wiki home">
+                <span class="brand__mark" aria-hidden="true">
+                    <img src="../../assets/icons/topiconnew.png" alt="" height="40">
+                </span>
+            </a>
+            <div class="topbar__divider" aria-hidden="true"></div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <a href="../index.html">Página Principal</a>
+                <a href="/wiki/Todas_As_Páginas/">Todas as Páginas</a>
+                <a href="#" data-random-page>Página Aleatória</a>
+            </nav>
+            <form class="hero-search" id="searchForm" role="search" autocomplete="off">
+                <div class="hero-search__field">
+                    <svg class="hero-search__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input type="search" id="searchInput" class="hero-search__input" placeholder="Pesquisar"
+                        aria-label="Pesquisar páginas da wiki" aria-expanded="false" aria-controls="searchPreview"
+                        role="combobox" aria-autocomplete="list" />
+                </div>
+                <ul class="search-preview" id="searchPreview" role="listbox" aria-label="Resultados da pesquisa" hidden>
+                </ul>
+            </form>
+            <div class="topbar__actions">
+                <button class="btn btn--ghost" id="randomBtn" type="button">🌙</button>
+
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <article class="container article article--wiki">
+            <p class="article__crumb"><a href="/">Início</a> › <a href="/wiki/index.html">Wiki</a>› <a href="#">Todas as
+                    Páginas</a></p>
+            <h1 class="article__title">Todas as Páginas</h1>
+
+            <div class="article__layout article__layout--wiki-toc-infobox" data-no-toc>
+                <div class="article__body">
+                    <p>Essa página lista todos os artigos disponíveis na Aurastra Wiki em órdem alfabética. Clique no
+                        título de um artigo para acessá-lo.
+                    </p>
+
+                    <h2>A</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Aurora_Bay/">Aurora Bay</a></li>
+                    </ul>
+                    </p>
+
+                    <h2>C</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Catástrofe_De_Pólis/">Catástrofe de Pólis</a></li>
+                        <li><a href="../Criação/">Criação</a></li>
+                    </ul>
+                    </p>
+
+                    <h2>J</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Jardim_Silencioso/">Jardim Silencioso</a></li>
+                    </ul>
+                    </p>
+
+                    <h2>N</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Nação_De_Lésbos/">Nação de Lésbos</a></li>
+                    </ul>
+                    </p>
+
+                    <h2>P</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Patch_Notes_1.1/">Patch Notes 1.1 — Escadaria da Vida e da Criação</a></li>
+                        <li><a href="../Patch_Notes_1.2/">Patch Notes 1.2 — O Olhar da Calamidade</a></li>
+                        <li><a href="../Patch_Notes_1.3/">Patch Notes 1.3 — O Cair das Pétalas</a></li>
+                        <li><a href="../Patch_Notes_1.4/">Patch Notes 1.4 — Os Caminhos de Aglaope</a></li>
+                        <li><a href="../Patch_Notes_1.5/">Patch Notes 1.5 — O Dever De Maron</a></li>
+                    </ul>
+
+                    <h2>V</h2>
+                    <p>
+                    <ul>
+                        <li><a href="../Vale_Bear/">Vale Bear</a></li>
+                    </ul>
+                    </p>
+
+
+
+
+
+
+                    </p>
+                </div>
+
+            </div>
+
+
+        </article>
+
+        <div class="wiki-update" role="note" aria-label="Informações de atualização da página">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3.5 12a8.5 8.5 0 1 1 2.49 6.01L3.5 15.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.5 20v-4.5H8M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span>Essa página não foi editada até o momento, a última atualização foi em DD de Mês de AAAA, às
+                HHhMM</span>
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>@ 2026 Base Central Trambiqueira (BCT) | feito com carinho por <a href="https://ashleytarifa.github.io/"
+                    target="_blank">@ashleytarifa</a></p>
+            <nav class="footer__links" aria-label="Footer">
+                <a href="https://discord.gg/Tp44KXT7Qw" target="_blank">Servidor do Discord</a>
+                <a href="https://www.tiktok.com/@aurastrabct" target="_blank">TikTok Official</a>
+                <a href="https://x.com/ServerBaseCT" target="_blank">X/Twitter Oficial</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="nav-scrim" id="navScrim" hidden></div>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

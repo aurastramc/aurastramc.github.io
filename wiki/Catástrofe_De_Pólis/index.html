@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catástrofe de Pólis — Aurastra Wiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="../../css/style.css" rel="stylesheet">
+    <style>
+        .article--wiki {
+            max-width: 1180px;
+            padding-bottom: 0;
+        }
+
+        .wiki-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 18px 0 24px;
+            color: var(--ink-2);
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .wiki-note svg {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            color: var(--muted);
+        }
+
+        .wiki-update {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 16px 24px;
+            background: var(--bg2);
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .wiki-update svg {
+            width: 20px;
+            height: 20px;
+            flex: none;
+        }
+
+        .article__layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .wiki-infobox {
+            overflow: hidden;
+            border: 1px solid var(--line-2);
+            border-radius: var(--r-md);
+            background: var(--panel);
+        }
+
+        .wiki-infobox h2 {
+            margin: 0;
+            padding: 10px 14px;
+            color: var(--ink);
+            background: var(--panel-2);
+            font-family: var(--display);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .wiki-infobox figure {
+            margin: 0;
+            padding: 12px;
+        }
+
+        .wiki-infobox img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: var(--r-sm);
+        }
+
+        .wiki-infobox figcaption {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .wiki-infobox table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .wiki-infobox th,
+        .wiki-infobox td {
+            padding: 8px 12px;
+            border-top: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .wiki-infobox th {
+            width: 40%;
+            color: var(--ink);
+        }
+
+        .wiki-color {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wiki-color__swatch {
+            width: 16px;
+            height: 16px;
+            flex: none;
+            border: 1px solid var(--line-2);
+            background: #ffffff;
+        }
+
+        .wiki-infobox .wiki-seal {
+            width: 40px;
+            height: 40px;
+            max-height: none;
+            object-fit: contain;
+            image-rendering: pixelated;
+            border-radius: 0;
+        }
+
+        .wiki-gallery {
+            margin-top: 40px;
+        }
+
+        .wiki-gallery h2 {
+            margin-top: 0;
+        }
+
+        .wiki-gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+            gap: 16px;
+        }
+
+        .wiki-gallery__item {
+            min-width: 0;
+            margin: 0;
+            overflow: hidden;
+            border: 1px solid var(--line-2);
+            border-radius: var(--r-md);
+            background: var(--panel);
+        }
+
+        .wiki-gallery__item img {
+            display: block;
+            width: 100%;
+            height: 210px;
+            padding: 10px;
+            object-fit: contain;
+            background: var(--panel-2);
+        }
+
+        .wiki-gallery__item img:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        .wiki-gallery__item figcaption {
+            margin: 0;
+            padding: 12px 14px;
+            color: var(--ink-2);
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        @media (max-width: 560px) {
+            .article__layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .wiki-update {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="primaryNav">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="brand" href="../index.html" aria-label="Verdant Empire Wiki home">
+                <span class="brand__mark" aria-hidden="true">
+                    <img src="../../assets/icons/topiconnew.png" alt="" height="40">
+                </span>
+            </a>
+            <div class="topbar__divider" aria-hidden="true"></div>
+            <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+                <a href="../index.html">Página Principal</a>
+                <a href="/wiki/Todas_As_Páginas/">Todas as Páginas</a>
+                <a href="#" data-random-page>Página Aleatória</a>
+            </nav>
+            <form class="hero-search" id="searchForm" role="search" autocomplete="off">
+                <div class="hero-search__field">
+                    <svg class="hero-search__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="m20 20-3.2-3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <input type="search" id="searchInput" class="hero-search__input" placeholder="Pesquisar"
+                        aria-label="Pesquisar páginas da wiki" aria-expanded="false" aria-controls="searchPreview"
+                        role="combobox" aria-autocomplete="list" />
+                </div>
+                <ul class="search-preview" id="searchPreview" role="listbox" aria-label="Resultados da pesquisa" hidden>
+                </ul>
+            </form>
+            <div class="topbar__actions">
+                <button class="btn btn--ghost" id="randomBtn" type="button">🌙</button>
+
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <article class="container article article--wiki">
+            <p class="article__crumb"><a href="/">Início</a> › Wiki</p>
+            <h1 class="article__title">Catástrofe de Pólis</h1>
+
+            <div class="article__layout article__layout--wiki-toc-infobox">
+                <div class="article__body">
+                    <p>Toda decisão final, todo destino, pertence a seres de pura luz, que guiam mortais durante suas
+                        breves vidas. Eles não podem causar o mal à nenhuma de suas criações — era o que eles queriam
+                        que pensassemos.<br>
+                        Pólis era o epicentro de toda vida, seres mágicos habitavam o lugar, seres com o sangue dos
+                        próprios Círculos Superiores. Crias da Vida e da Existência, capazes de moldar a terra e erguer
+                        os mares. Nosso planeta era o primogênito dos Círculos "Nenhum esboço é perfeito" nós ouvíamos
+                        diariamente, como um reverberado de ecos produzidos pelos seus fiéis, mas a única verdade é: os
+                        Círculos são cruéis, incapazes de empatia por algo que eles consideram inferiores.<br>
+                        <br>
+                        O mundo não era um lugar ideal, não vivíamos a abundância que os Mágicos viviam, eles usavam
+                        vestidos e ternos adornados de ouro e joias preciosas, decorações mineradas, processadas e
+                        colhidas por nós, seus escravos. Eu nasci em uma colônia, filha de uma mulher escravizada e de
+                        um pai cujo nunca soube sequer o nome, afinal, eu não nasci mágica como ele. Desde minha
+                        primeira infância eu trabalhei em minas, depois em forjas, experienciando o pior que a
+                        humanidade — ou a falta dela — poderia oferecer.<br>
+                        É seguro dizer que eu me cansei desse sistema, dos seres que pensavam ter autoridade sobre mim,
+                        sobre meu corpo e decisões, apenas pelo fato de eu ter nascido diferente deles. Me enojava, o
+                        ódio fervia em mim, assim como os metais que borbulhavam na forja. Eu não tinha ninguém com quem
+                        contar, e os Círculos só atendiam aos meus opressores, aqueles com coroas de ouro e talheres de
+                        metal, então eu não rezei, não clamei em momento algum por justiça, eu não queria justiça, eu
+                        queria vingança, minhas preces eram por uma espécie de calamidade que abriria Pólis ao meio e
+                        devoraria todos aqueles que me subjugavam. Mas isso também nunca veio.<br>
+                        <br>
+                        Certo dia, vi dois Mágicos analisando nosso trabalho de perto, muito perto. "Os fiscais não usam
+                        ternos e broches" eu pensei comigo mesma, não, os visitantes não estavam interessados no nosso
+                        trabalho. Eles queriam os trabalhadores.
+                        Um dos mágicos se aproximou de uma criança, não muito mais velha que seis primaveras, e eles a
+                        arrancaram dos braços de sua mãe, uma garota de doze primaveras que trabalhava separando joias
+                        atrás de mim. A cena me enfureceu — eu não convivi com minha mãe, eu sequer a conheci, graças a
+                        um destes monstros. E eles fariam com a criança o que fizeram com sua mãe, com minha mãe, o que
+                        um dia fizeram comigo.<br>
+                        Eu levantei o balde escaldante de ouro com minhas luvas e despejei sobre a cabeça de um dos
+                        Mágicos, sua pele borbulhou como o caldeirão, e antes que os fiscais e o outro mágico pudessem
+                        reagir, os outros escravizados se levantaram. Nós atacamos nossos mestres, e por horas,
+                        batalhamos com as ferramentas de nosso 'trabalho'. Se eles não queriam que fossemos um exército,
+                        não deveriam ter nos armado em primeiro lugar.<br>
+                        <br>
+                        Quando tudo acabou, o povo arrancou a coroa de um dos mestres e me coroaram sua rainha, não
+                        alguém que pudesse ordená-los, mas um farol que pudesse guiá-los. E ali diante de olhos
+                        desesperados, lágrimas, choros e o alívio de um povo oprimido; os céus se abriram e deles, uma
+                        bela dama de pele rosada e cabelos pouco mais claros que sua feição desceu. Ela proclamou seu
+                        nome: 'Malathea'. E disse que não pôde ajudar por ser um Círculo Inferior, e que chorou junto ao
+                        seu próprio domínio — a humanidade. <br>
+                        Ela se ajoelhou diante a mim e pediu perdão, pediu que eu a julgasse como uma dos meus, e eu o
+                        fiz. <br>
+                        "O ato de ter sua vida tirada é reservada apenas à escória da existência, os meus terão uma
+                        morte honrosa, deixe que seu tempo acabe e só assim experienciem o doce beijo do silêncio." <br>
+                        Eu nunca imaginei ver um Círculo chorando, ainda menos por algo que eu disse, mas ali estávamos,
+                        a Dama da Humanidade e eu... uma humana qualquer.<br>
+                        Nós nos estabelecemos rapidamente, desenvolvendo nossa própria sociedade longe daqueles que nos
+                        oprimiram um dia, era belo e harmonioso. Malathea passou a viver comigo em uma residência perto
+                        ao mar, ela se provou uma ótima companhia, mas, nada é o mesmo para sempre.<br>
+                        <br>
+                        O Círculo da Criação, pai de Malathea a invejava profundamente, ele enciumava a relação que ela
+                        possuía com suas criações, e Tandem, seu outro pai, seguiria Irigo até os fins da existência
+                        para agradá-lo. Os Círculos enviaram um batalhão dos Mágicos para nossa cidade, Parsiphae e
+                        trouxeram com eles desgraça e morte.<br>
+                        Tudo o que lutamos para construir em anos, eles destruíram em minutos, nós lutamos bravamente e
+                        estávamos certos de nossa vitória. O tempo parecia fluir estranhamente e a luta parecia ter
+                        acabado, então fui correndo ao encontro da minha amada, ela estava protegendo as crianças —
+                        claro, a ordem foi simples, ela é capaz de segui-la — eu repetia. <br>
+                        Mas ao chegar em nosso lar, as crianças estavam mortas e a adaga em suas mãos, eu caí ao seus
+                        pés, chorando, como ela poderia ter me traído desta maneira? Por que? Mas ao olhar para seu
+                        rosto — eu os vi. Boreas, Tandem, Irigo, Cernos... eles gargalhavam, eles riam do que havia
+                        acontecido, eles planejaram isso.<br>
+                        Com a força que me restava eu plantei meu punhal no peito de Malathea, que sorriu.<br>
+                        "Eu te amo" ela me disse com sua voz fraca.<br>
+                        "Te vejo quando chegarmos lá, minha amada" eu respondi, forçando a espada contra meu próprio
+                        peito.<br>
+                        <br>
+                        Os Círculos odiaram tudo que eu, Melanira, fiz, e como punição, eles me forçaram a viver este
+                        momento por duzentas eras. E eu voltei a rezar por vingança, por calamidade. E ela me ouviu, sua
+                        canção era tão doce. Não doce como uma fruta, mas doce como o cheiro de um cadáver.<br>
+                        Algo rastejou pelo Cosmos e me alcançou, algo poderoso, algo vermelho. <br>
+                        <br>
+                        Toda decisão final, todo destino, pertence a seres de pura luz — mas não o meu.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <div class="wiki-update" role="note" aria-label="Informações de atualização da página">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3.5 12a8.5 8.5 0 1 1 2.49 6.01L3.5 15.5" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.5 20v-4.5H8M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span>Essa página não foi editada até o momento, a última atualização foi em 17 de Novembro de 2026, às
+                12h55</span>
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>@ 2026 Base Central Trambiqueira (BCT) | feito com carinho por <a href="https://ashleytarifa.github.io/"
+                    target="_blank">@ashleytarifa</a></p>
+            <nav class="footer__links" aria-label="Footer">
+                <a href="https://discord.gg/Tp44KXT7Qw" target="_blank">Servidor do Discord</a>
+                <a href="https://www.tiktok.com/@aurastrabct" target="_blank">TikTok Official</a>
+                <a href="https://x.com/ServerBaseCT" target="_blank">X/Twitter Oficial</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="nav-scrim" id="navScrim" hidden></div>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
